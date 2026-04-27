@@ -32,6 +32,12 @@ pipeline {
                 bat 'pytest tests\\test_problematic_users.py'
             }
         }
+
+        stage("Test Performance Criteria for Login") {
+            steps{
+                bat 'pytest tests\\test_performance_flow.py'
+            }
+        }
     }
     post {
         always {
