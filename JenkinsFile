@@ -15,9 +15,22 @@ pipeline {
             }
         }
 
-        stage("Run Tests") {
+        stage("Test Basic Functionality") {
             steps {
-                bat 'pytest'
+                bat 'pytest tests\\test_basic_functionality.py'
+            }
+        }
+
+        stage("Test Complete Flow") {
+            steps {
+                bat 'pytest tests\\test_complete_flow.py'
+            }
+        }
+
+        stage("Test Errors for Login") {
+            steps{
+                bat 'pytest tests\\test_problematic_users.py'
+            }
         }
     }
 
