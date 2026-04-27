@@ -22,9 +22,9 @@ def driver():
     driver.quit()
 
 @pytest.fixture
-def login(driver):
+def login(driver, username, password):
     login = LoginPage(driver)
-    login.login("standard_user", "secret_sauce")
+    login.login(username, password)
     return driver
 
 @pytest.fixture
