@@ -20,7 +20,7 @@ pipeline {
                 bat 'pytest'
         }
     }
-
+}
     post {
         always {
             archiveArtifacts artifacts: 'report.html', fingerprint: true
